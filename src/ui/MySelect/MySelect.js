@@ -1,8 +1,8 @@
 import React from 'react';
 
-const MySelect = ({options, defaultValue, value, onSortChange}) => {
+const MySelect = ({options, defaultValue, filters, setFilters, ...props}) => {
     return (
-        <select value={value} onChange={(e) => onSortChange(e.target.value)}>
+        <select {...props} value={filters.sort} onChange={(e) => setFilters({...filters, sort: e.target.value})}>
             <option disabled value=''>{defaultValue}</option>
             {options.map(option => <option key={option.value} value={option.value}>{option.name}</option>)}
         </select>

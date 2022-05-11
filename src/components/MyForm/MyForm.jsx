@@ -3,7 +3,7 @@ import MyInput from "../../ui/MyInput/MyInput";
 import MyButton from "../../ui/MyButton/MyButton";
 import cl from './MyForm.module.css';
 
-const MyForm = ({addPost, title, body, setTitle, setBody, value, setSearchQuery}) => {
+const MyForm = ({addPost, title, body, setTitle, setBody}) => {
 
 
     const onAddPost = () => {
@@ -26,9 +26,7 @@ const MyForm = ({addPost, title, body, setTitle, setBody, value, setSearchQuery}
                 setBody(e.target.value);
             }} value={body} placeholder='type your post body'/>
             <MyButton onClick={onAddPost}>Add post</MyButton>
-            <MyInput onChange={(e) => {
-                setSearchQuery(e.target.value);
-            }} value={value} className={cl.findInput} placeholder='type to find your post'/>
+
         </form>
     );
 };
