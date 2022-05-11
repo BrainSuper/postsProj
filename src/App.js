@@ -8,12 +8,14 @@ import {getPost} from "./api/api";
 import MySelect from "./ui/MySelect/MySelect";
 import cl from "./components/MyForm/MyForm.module.css";
 import PostFilter from "./components/PostFilter/PostFilter";
+import MyModal from "./ui/MyModal/MyModal";
 
 function App() {
     const [posts, setPosts] = useState(null);
     const [title, setTitle] = useState('');
     const [body, setBody] = useState('');
     const [filters, setFilters] = useState({sort: '', query: ''});
+    const [modal, setModal] = useState(false);
 
     useEffect(() => {
         getPost().then(response => {
@@ -41,6 +43,7 @@ function App() {
         setPosts([...posts, newPost]);
         setTitle('');
         setBody('');
+        setModal(false);
     }
     const deletePost = (postId) => {
         setPosts(posts.filter((post) => post.id != postId))
@@ -48,7 +51,12 @@ function App() {
 
     return (
         <div className="App">
-            <MyForm title={title} body={body} setBody={setBody} setTitle={setTitle} addPost={addPost}/>
+            <MyButton onClick={() => {
+                setModal(true);
+            }} style={{width: "200px", marginTop: "10px"}}>Create post</MyButton>
+            <MyModal visible={modal} setVisible={setModal}>
+                <MyForm title={title} body={body} setBody={setBody} setTitle={setTitle} addPost={addPost}/>
+            </MyModal>
             <hr/>
             <PostFilter filters={filters} setFilters={setFilters}/>
             <MyPosts deletePost={deletePost} posts={searchedAndSortedPosts}/>
