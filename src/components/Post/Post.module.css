@@ -1,0 +1,25 @@
+.post {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid teal;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 10px;
+    font-size: 18px;
+
+}
+.number {
+    width: 5%;
+    margin-right: 10px;
+}
+.title {
+    width: 90%;
+    margin-right: 15px;
+    text-align: justify;
+}
+.title h1 {
+    text-align: center;
+    margin: 0;
+}

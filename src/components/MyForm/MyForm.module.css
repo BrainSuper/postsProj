@@ -1,0 +1,14 @@
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+form h2 {
+    margin-bottom: 15px;
+}
+.findInput {
+    margin-top: 15px;
+}
