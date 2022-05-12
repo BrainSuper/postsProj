@@ -5,3 +5,36 @@
   width: 850px;
   text-align: center;
 }
+.post-enter {
+  opacity: 0;
+  transform: translateX(-350px);
+
+  /*transform: scale(0.9);*/
+}
+.post-enter-active {
+  opacity: 1;
+  transform: translateX(0px);
+  transition: opacity 300ms, transform 300ms;
+}
+.post-exit {
+  opacity: 1;
+}
+.post-exit-active {
+  opacity: 0;
+  transform: translateX(-850px);
+
+  /*transform: scale(0.9);*/
+  transition: opacity 300ms, transform 300ms;
+}
+.page {
+  display: inline-block;
+  cursor: pointer;
+  font-size: 15px;
+  margin: 10px 3px;
+  width: 70px;
+  border-radius: 5px;
+  border: 2px solid teal;
+}
+.page__active {
+  border: 3px solid orange;
+}
